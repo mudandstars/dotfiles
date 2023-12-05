@@ -1,0 +1,292 @@
+[
+	{
+		"key": "cmd+k cmd+k",
+		"command": "toggle",
+		"when": "editorTextFocus",
+		"args": {
+			"id": "fontSize",
+			"value": [
+				{
+					"editor.fontSize": 20,
+					"editor.lineHeight": 40
+				},
+				{
+					"editor.fontSize": 16,
+					"editor.lineHeight": 30
+				},
+				{
+					"editor.fontSize": 14,
+					"editor.lineHeight": 0
+				}
+			]
+		}
+	},
+
+	{
+		"key": "cmd+k cmd+i",
+		"command": "namespaceResolver.import"
+	},
+
+	//? TERMINAL
+	{
+		"key": "cmd+t",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.terminal.focusNextPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.terminal.focusPreviousPane",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "workbench.action.terminal.kill",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+y",
+		"command": "workbench.action.terminal.new",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.terminal.split",
+		"when": "terminalFocus"
+	},
+
+	//? File Explorer
+	{
+		"key": "cmd+d",
+		"command": "duplicate.execute",
+		"when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+	},
+	{
+		"key": "cmd+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "shift+cmd+n",
+		"command": "explorer.newFolder",
+		"when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+	},
+
+	//? Emmet
+	{
+		"key": "cmd+m cmd+i",
+		"command": "editor.emmet.action.balanceIn",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+m cmd+o",
+		"command": "editor.emmet.action.balanceOut",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+m cmd+w",
+		"command": "editor.emmet.action.wrapWithAbbreviation",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+m cmd+m",
+		"command": "editor.emmet.action.matchTag",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+m cmd+e",
+		"command": "editor.action.smartSelect.expand",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+m cmd+r",
+		"command": "editor.emmet.action.updateTag",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+m cmd+backspace",
+		"command": "editor.emmet.action.removeTag",
+		"when": "editorTextFocus"
+	},
+
+	//? Line Manipulation
+	{
+		"key": "cmd+l",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+j",
+		"command": "editor.action.joinLines",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+cmd+[",
+		"command": "editor.fold",
+		"when": "editorFocus"
+	},
+	{
+		"key": "shift+cmd+]",
+		"command": "editor.unfold",
+		"when": "editorFocus"
+	},
+
+	//? Multi-Cursor
+	{
+		"key": "cmd+backspace",
+		"command": "editor.action.moveSelectionToPreviousFindMatch",
+		"when": "editorFocus && editorHasMultipleSelections"
+	},
+	{
+		"command": "editor.action.moveSelectionToNextFindMatch",
+		"key": "cmd+k cmd+d",
+		"when": "editorFocus && editorHasMultipleSelections"
+	},
+	{
+		"key": "cmd+right",
+		"command": "editor.action.insertCursorAtEndOfEachLineSelected",
+		"when": "editorFocus && editorHasSelection"
+	},
+
+	//? Split Panels
+	{
+		"key": "cmd+shift+w",
+		"command": "workbench.action.closeEditorsInGroup"
+	},
+	{
+		"key": "cmd+n",
+		"command": "workbench.action.splitEditor",
+		"when": "editorFocus"
+	},
+	{
+		"key": "cmd+l",
+		"command": "workbench.action.navigateRight",
+		"when": "editorFocus"
+	},
+	{
+		"key": "cmd+h",
+		"command": "workbench.action.navigateLeft",
+		"when": "editorFocus"
+	},
+	{
+		"key": "cmd+=",
+		"command": "workbench.action.increaseViewSize",
+		"when": "editorFocus"
+	},
+	{
+		"key": "cmd+-",
+		"command": "workbench.action.decreaseViewSize",
+		"when": "editorFocus"
+	},
+	{
+		"key": "cmd+1",
+		"command": "workbench.action.terminal.focusAtIndex1"
+	},
+	{
+		"key": "cmd+2",
+		"command": "workbench.action.terminal.focusAtIndex2"
+	},
+	{
+		"key": "cmd+3",
+		"command": "workbench.action.terminal.focusAtIndex3"
+	},
+
+	//? Unordered
+	{
+		"key": "shift+tab",
+		"command": "outdent",
+		"when": "editorTextFocus && !editorTabMovesFocus"
+	},
+	{
+		"key": "cmd+[IntlBackslash]",
+		"command": "workbench.action.terminal.focus"
+	},
+
+	{
+		"key": "cmd+3",
+		"command": "editor.action.changeAll",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	{
+		"key": "shift+cmd+t",
+		"command": "-workbench.action.reopenClosedEditor"
+	},
+
+	{
+		"key": "cmd+k cmd+e",
+		"command": "workbench.view.explorer"
+	},
+	{
+		"key": "shift+cmd+e",
+		"command": "-workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		"key": "cmd+k cmd+x",
+		"command": "workbench.view.extensions"
+	},
+	{
+		"key": "shift+cmd+x",
+		"command": "-workbench.view.extensions",
+		"when": "viewContainer.workbench.view.extensions.enabled"
+	},
+	{
+		"key": "shift+cmd+f",
+		"command": "workbench.view.search"
+	},
+	{
+		"key": "cmd+e",
+		"command": "workbench.action.focusActiveEditorGroup"
+	},
+	{
+		"key": "cmd+k cmd+b",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "cmd+k cmd+g",
+		"command": "workbench.view.scm"
+	},
+	{
+		"key": "shift+cmd+f",
+		"command": "-workbench.view.search"
+	},
+	{
+		"key": "cmd+k cmd+f",
+		"command": "-editor.action.formatSelection",
+		"when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+k cmd+enter",
+		"command": "editor.action.goToDeclaration",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "cmd+b",
+		"command": "-workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "cmd+j",
+		"command": "-workbench.action.togglePanel"
+	},
+	{
+		"key": "shift+cmd+f",
+		"command": "-workbench.action.findInFiles"
+	},
+	{
+		"key": "cmd+k cmd+r",
+		"command": "-workbench.action.keybindingsReference"
+	},
+	{
+		"key": "cmd+k cmd+r",
+		"command": "-git.revertSelectedRanges",
+		"when": "isInDiffEditor && !operationInProgress"
+	},
+	{
+		"key": "cmd+w",
+		"command": "workbench.action.closeActiveEditor",
+		"when": "!terminalFocus"
+	}
+]

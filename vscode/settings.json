@@ -1,0 +1,169 @@
+{
+	// Better VSCode Book Basics
+	"editor.copyWithSyntaxHighlighting": false,
+	"editor.emptySelectionClipboard": false,
+	"workbench.editor.enablePreview": false,
+	"window.newWindowDimensions": "inherit",
+	"editor.multiCursorModifier": "ctrlCmd",
+	"files.trimTrailingWhitespace": true,
+	"diffEditor.renderSideBySide": false,
+	"editor.snippetSuggestions": "top",
+	"editor.detectIndentation": false,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+
+	"terminal.integrated.shell.osx": "/bin/zsh",
+	// Hiding Everything
+	"editor.minimap.enabled": false,
+	"editor.minimap.autohide": true,
+	"workbench.sideBar.location": "right",
+	"workbench.editor.showTabs": "single",
+	"workbench.statusBar.visible": false,
+
+	// Customizing the global search function
+	"search.useIgnoreFiles": false,
+	"search.exclude": {
+		"**/vendor": true,
+		"**/venv": true,
+		"**/.venv": true,
+		"**/storage": true,
+		"**/node_modules": true,
+		"**/build": true,
+		"**/flutter_build": true,
+		"**/android": true,
+		"**/ios": true,
+		"**/macos": true,
+		"**/windows": true,
+		"**/linux": true,
+		"**/dist": true,
+		"**/_ide_helper.php": true,
+		"**/env": true,
+		"**/public/{[^i],?[^n]}*": true,
+		"**/laravel.log": true,
+		"**/.phpunit.result.cache": true,
+		"**/package-lock.json": true,
+		"composer.lock": true,
+		"**.pyc": true,
+		"**.po": true,
+		"messages.pot": true,
+		"delete_svn_files.sh": true
+	},
+	"scm.diffDecorations": "none",
+	"editor.hover.enabled": true,
+	"editor.matchBrackets": "never",
+	"workbench.tips.enabled": false,
+	"editor.colorDecorators": false,
+	"workbench.startupEditor": "none",
+	"editor.lightbulb.enabled": false,
+	"editor.selectionHighlight": false,
+	"editor.overviewRulerBorder": false,
+	"editor.renderLineHighlight": "none",
+	"editor.occurrencesHighlight": false,
+	"problems.decorations.enabled": false,
+	"editor.renderControlCharacters": false,
+	"editor.hideCursorInOverviewRuler": true,
+	"editor.gotoLocation.multipleReferences": "goto",
+	"editor.gotoLocation.multipleDefinitions": "goto",
+	"editor.gotoLocation.multipleDeclarations": "goto",
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"editor.gotoLocation.multipleImplementations": "goto",
+	"editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+	/**
+	 * Typography
+	 **/
+	"editor.fontFamily": "'Fira Code'",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 16,
+	"editor.lineHeight": 30,
+	"editor.suggestFontSize": 16,
+	"editor.suggestLineHeight": 28,
+	"terminal.integrated.fontSize": 15,
+	"terminal.integrated.lineHeight": 1.5,
+
+	"[javascript, javascriptreact, typescript, typescriptreact, html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+
+	"[php]": {
+		"editor.defaultFormatter": "open-southeners.laravel-pint",
+		"editor.formatOnSave": true
+	},
+
+	"[go]": {
+		"editor.defaultFormatter": "golang.go",
+		"editor.formatOnSave": true
+	},
+
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true,
+		"editor.insertSpaces": false,
+		"editor.detectIndentation": false
+	},
+
+	/**
+	 * git
+	 **/
+	"git.autofetch": true,
+	"git.confirmSync": false,
+	"git.enableSmartCommit": true,
+	"git.decorations.enabled": false,
+
+	/**
+	 * Prettier
+	 **/
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.useEditorConfig": false,
+	"prettier.vueIndentScriptAndStyle": true,
+
+	/**
+	 * Editor
+	 **/
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.tabSize": 4,
+	"editor.insertSpaces": true,
+	"editor.autoIndent": "none",
+	"editor.formatOnSave": true,
+	"editor.lineNumbers": "relative",
+	"editor.suggestSelection": "recentlyUsedByPrefix",
+
+	"workbench.colorTheme": "Dracula",
+	"workbench.layoutControl.enabled": false,
+	"workbench.iconTheme": "vscode-icons",
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"diffEditor.wordWrap": "off",
+
+	"files.autoSave": "afterDelay",
+	"task.allowAutomaticTasks": "on",
+
+	"go.toolsManagement.autoUpdate": true,
+	"html.format.enable": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"vue.updateImportsOnFileMove.enabled": true,
+
+	"php.suggest.basic": false,
+	"intelephense.phpdoc.propertyTemplate": {
+		"summary": "$1",
+		"tags": ["@var ${1:$SYMBOL_TYPE}"]
+	},
+	"laravel-pint.enable": true,
+	"laravel-pint.runInLaravelSail": true,
+	"git.openRepositoryInParentFolders": "never",
+	"security.workspace.trust.untrustedFiles": "open",
+	"workbench.activityBar.location": "hidden",
+	"editor.renderWhitespace": "none"
+}
+
+// "emeraldwalk.runonsave": {
+//     "commands": [
+//         {
+//             "match": ".*/Enum/.*\\.php$",
+//             "cmd": "php artisan sync-enum-types && npx prettier --write ./resources/js"
+//         }
+//     ]
+// },

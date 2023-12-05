@@ -1,0 +1,17 @@
+alias pest='vendor/bin/pest'
+alias got='go test ./...'
+alias c='composer'
+alias a='php artisan'
+alias mfs='php artisan migrate:fresh --seed'
+alias dev='npm run dev'
+alias pint='vendor/bin/pint'
+
+heictojpg() {
+    sips -s format jpeg "$1" --out "$2"
+}
+
+heicstojpgs() {
+    for file in *.HEIC; do
+        heictojpg $file ${file%.HEIC}.jpg
+    done
+}
