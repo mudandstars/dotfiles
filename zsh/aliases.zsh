@@ -1,6 +1,6 @@
 alias vim='nvim'
 alias n='nvim'
-alias config='/usr/bin/git --git-dir=/Users/sochiera/.dotfiles/ --work-tree=/Users/sochiera'
+alias cfgi='bash $HOME/.dotfiles/install.sh'
 
 # php aliases
 alias pest='vendor/bin/pest'
