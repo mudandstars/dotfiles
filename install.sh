@@ -11,7 +11,7 @@ ln -s $DOTFILES/zsh/.zshrc $HOME/.zshrc
 rm -rf $HOME/.tmux.conf
 ln -s $DOTFILES/tmux/.tmux.conf $HOME/.tmux.conf
 
-CONFIG_DIRS=("nvim" "zellij" "alacritty" "kitty")
+CONFIG_DIRS=("nvim" "alacritty")
 for config in "${CONFIG_DIRS[@]}"; do
     rm -rf "$HOME/.config/$config"
     ln -s "$DOTFILES/$config" "$HOME/.config/$config"

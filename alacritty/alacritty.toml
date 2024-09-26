@@ -1,14 +1,17 @@
-# [shell]
-# program = "/opt/homebrew/bin/zellij"
 import = ["~/.config/alacritty/themes/coolnight.toml"]
 
 [window]
-padding.x = 16
-padding.y = 14
-decorations = "none" # Removes the window decoration (title bar, etc.)
+startup_mode = 'Maximized'
+decorations = "none"       # Removes the window decoration (title bar, etc.)
+opacity = 0.8
+blur = true
+padding.y = 10
+
 
 [font]
-size = 13
+size = 20
+offset.y = 16
+glyph_offset.y = 8
 
 # FiraCode Nerd Font
 normal = { family = "FiraCode Nerd Font", style = "Regular" }
