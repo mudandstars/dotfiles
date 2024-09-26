@@ -4,6 +4,7 @@ alias ncfg='nvim $HOME/.dotfiles'
 
 alias lg='lazygit'
 alias gst='git status'
+alias gp='git pull'
 
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
