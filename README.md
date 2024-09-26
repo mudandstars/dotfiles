@@ -8,6 +8,8 @@
     brew install nvim
     brew install tmux
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
+    brew install eza
+    brew install lazygit
 ```
 
 ## Install configs
