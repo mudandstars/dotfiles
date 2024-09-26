@@ -1,5 +1,6 @@
 alias vim='nvim'
 alias n='nvim'
+alias lgit='lazygit'
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
 
