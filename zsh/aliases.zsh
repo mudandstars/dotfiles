@@ -1,6 +1,7 @@
 alias vim='nvim'
 alias n='nvim'
-alias cfgi='bash $HOME/.dotfiles/install.sh'
+alias reload='source $HOME/.zshrc && echo "reloaded config"'
+alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
 
 # php aliases
 alias pest='vendor/bin/pest'
