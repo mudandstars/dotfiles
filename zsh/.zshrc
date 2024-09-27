@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/:$PATH"
 export PATH="/Users/paul/Library/Application Support/Herd/bin/":$PATH
 
-source $ZSH/oh-my-zsh.sh
+
 # Detect OS
 case "$(uname)" in
   "Linux")
@@ -38,4 +38,4 @@ case "$(uname)" in
     ;;
 esac
 
-export HERD_PHP_82_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/82/"
+source $ZSH/oh-my-zsh.sh
