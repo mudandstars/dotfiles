@@ -6,6 +6,8 @@ alias lg='lazygit'
 alias gst='git status'
 alias gp='git pull'
 
+alias tcode="tmux attach -t coding"
+
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
 
