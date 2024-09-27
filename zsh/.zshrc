@@ -37,6 +37,12 @@ esac
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PYTHONPATH=:/home/paul/tetraeder.solar/sk_trunk/viewer/spkweb_v06
+case "$(uname)" in
+  "Linux")
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+		source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+		export PYTHONPATH=:/home/paul/tetraeder.solar/sk_trunk/viewer/spkweb_v06
+    ;;
+  *)
+    ;;
+esac
