@@ -5,6 +5,7 @@ alias ncfg='nvim $HOME/.dotfiles'
 alias lg='lazygit'
 alias gst='git status'
 alias gp='git pull'
+alias co='git checkout'
 
 alias tcode="tmux attach -t coding"
 alias tdot="tmux attach -t dotfiles"
