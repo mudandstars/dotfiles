@@ -1,5 +1,3 @@
-# import = ["~/.config/alacritty/themes/themes/coolnight.toml"]
-
 [window]
 padding.y = 10
 padding.x = 8
@@ -17,46 +15,6 @@ normal = { family = "FiraCode Nerd Font", style = "Regular" }
 bold = { family = "FiraCode Nerd Font", style = "Bold" }
 italic = { family = "FiraCode Nerd Font", style = "Italic" }
 
-# [shell]
-# program = "/opt/homebrew/bin/tmux"
-# args = ["attach"]
-
-# One Dark theme
 [colors]
 [colors.primary]
 background = '0x1c1c1c'
-# foreground = '0xabb2bf'
-# bright_foreground = '0xe6efff'
-
-# Normal colors
-# [colors.normal]
-# black = '0x1e2127'
-# red = '0xe06c75'
-# green = '0x98c379'
-# yellow = '0xd19a66'
-# blue = '0x61afef'
-# magenta = '0xc678dd'
-# cyan = '0x56b6c2'
-# white = '0x828791'
-#
-# # Bright colors
-# [colors.bright]
-# black = '0x5c6370'
-# red = '0xe06c75'
-# green = '0x98c379'
-# yellow = '0xd19a66'
-# blue = '0x61afef'
-# magenta = '0xc678dd'
-# cyan = '0x56b6c2'
-# white = '0xe6efff'
-#
-# # Dim colors
-# [colors.dim]
-# black = '0x1e2127'
-# red = '0xe06c75'
-# green = '0x98c379'
-# yellow = '0xd19a66'
-# blue = '0x61afef'
-# magenta = '0xc678dd'
-# cyan = '0x56b6c2'
-# white = '0x828791'
