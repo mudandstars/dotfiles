@@ -7,9 +7,11 @@ alias gst='git status'
 alias gp='git pull'
 
 alias tcode="tmux attach -t coding"
+alias tdot="tmux attach -t dotfiles"
 
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
+alias ...='cd ~'
 
 alias ls='eza -lh --group-directories-first --icons --hyperlink'
 alias lsa='ls -a'
