@@ -28,6 +28,7 @@ return {
         },
         oldfiles = {
           prompt_title = 'Search',
+          initial_mode = 'normal',
         },
         lsp_document_symbols = {
           symbol_width = 55,
@@ -36,4 +37,3 @@ return {
     })
   end,
 }
-
