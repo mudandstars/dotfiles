@@ -21,6 +21,15 @@ return {
           timeout = 200,
         },
         sorting_strategy = 'ascending',
+        vimgrep_arguments = {
+          'rg',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--smart-case',
+          '--fixed-strings', -- Add this line to disable regex searching
+        },
       },
       pickers = {
         find_files = {
