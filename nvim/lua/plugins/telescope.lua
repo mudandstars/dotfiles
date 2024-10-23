@@ -19,6 +19,7 @@ return {
         },
         preview = {
           timeout = 200,
+          treesitter = false,
         },
         sorting_strategy = 'ascending',
         vimgrep_arguments = {
@@ -41,6 +42,10 @@ return {
         },
         lsp_document_symbols = {
           symbol_width = 55,
+          initial_mode = 'normal',
+        },
+        buffers = {
+          initial_mode = 'normal',
         },
       },
     })
