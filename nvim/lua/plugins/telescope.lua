@@ -4,11 +4,14 @@ return {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
     'nvim-telescope/telescope-live-grep-args.nvim',
+    'folke/trouble.nvim',
   },
   keys = {
-    { '<leader>a', function() require("telescope.builtin").lsp_document_symbols({ symbols = { "method", "function" } }) end },
+    { '<leader>a', function() require("telescope.builtin").lsp_document_symbols({ symbols = { "class", "method", "function" } }) end },
   },
   config = function()
+    local trouble = require("trouble.providers.telescope")
+
     require('telescope').setup({
       defaults = {
         path_display = { truncate = 1 },
@@ -31,6 +34,10 @@ return {
           '--smart-case',
           '--fixed-strings', -- Add this line to disable regex searching
         },
+        -- mappings = {
+        --   i = { ["<C-t>"] = trouble.open_with_trouble }, -- Use Ctrl + t in insert mode
+        --   n = { ["<C-t>"] = trouble.open_with_trouble }, -- Use Ctrl + t in normal mode
+        -- },
       },
       pickers = {
         find_files = {
@@ -46,6 +53,13 @@ return {
         },
         buffers = {
           initial_mode = 'normal',
+        },
+        lsp_references = {
+          initial_mode = 'normal',
+          mappings = {
+            i = { ["<C-t>"] = trouble.open_with_trouble }, -- Send references to Trouble in insert mode
+            n = { ["<C-t>"] = trouble.open_with_trouble }, -- Send references to Trouble in normal mode
+          },
         },
       },
     })
