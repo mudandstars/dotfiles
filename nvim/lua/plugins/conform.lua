@@ -3,9 +3,14 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
+        php = { "phpcsfixer" },
         blade = { "blade-formatter" },
+
         html = { "prettier" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
         vue = { "prettier" },
+
         lua = { "styleua " },
       },
       notify_on_error = true,
