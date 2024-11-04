@@ -20,3 +20,5 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH="/opt/homebrew/opt/mariadb@10.5/bin:$PATH"
+
