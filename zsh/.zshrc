@@ -20,5 +20,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# PHP Setup
 export PATH="/opt/homebrew/opt/mariadb@10.5/bin:$PATH"
-
+export HERD_PHP_83_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/83/"
+export HERD_PHP_82_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/82/"
