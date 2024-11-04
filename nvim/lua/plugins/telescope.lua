@@ -34,10 +34,6 @@ return {
           '--smart-case',
           '--fixed-strings', -- Add this line to disable regex searching
         },
-        -- mappings = {
-        --   i = { ["<C-t>"] = trouble.open_with_trouble }, -- Use Ctrl + t in insert mode
-        --   n = { ["<C-t>"] = trouble.open_with_trouble }, -- Use Ctrl + t in normal mode
-        -- },
       },
       pickers = {
         find_files = {
@@ -56,10 +52,6 @@ return {
         },
         lsp_references = {
           initial_mode = 'normal',
-          mappings = {
-            i = { ["<C-t>"] = trouble.open_with_trouble }, -- Send references to Trouble in insert mode
-            n = { ["<C-t>"] = trouble.open_with_trouble }, -- Send references to Trouble in normal mode
-          },
         },
       },
     })
