@@ -12,6 +12,7 @@ export PATH="/Users/paul/Library/Application Support/Herd/bin/":$PATH
 
 plugins=(
 	git 
+	aws
 	fig
 	copyfile
 	zsh-syntax-highlighting 
@@ -25,3 +26,8 @@ export PATH="/opt/homebrew/opt/mariadb@10.5/bin:$PATH"
 export HERD_PHP_83_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/83/"
 export HERD_PHP_82_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/82/"
 export PATH=/usr/local/bin/:$PATH
+
+# aws autocomplete
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
