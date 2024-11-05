@@ -15,12 +15,13 @@ return {
       },
       notify_on_error = true,
       formatters = {
-        php = {
+        phpcsfixer = {
           command = "php-cs-fixer",
           args = {
             "fix",
             "$FILENAME",
-            "--config=./vendor/bin/php-cs-fixer fix.php --config=.php-cs-fixer.dist.php -v",
+            "--config=.php-cs-fixer.dist.php",
+            "-v",
           },
           stdin = false,
         },
