@@ -10,10 +10,15 @@ return {
     { '<leader>a', function() require("telescope.builtin").lsp_document_symbols({ symbols = { "class", "method", "function" } }) end },
   },
   config = function()
-    local trouble = require("trouble.providers.telescope")
+    local actions = require("telescope.actions")
+    local open_with_trouble = require("trouble.sources.telescope").open
 
     require('telescope').setup({
       defaults = {
+        mappings = {
+          i = { ["<c-t>"] = open_with_trouble },
+          n = { ["<c-t>"] = open_with_trouble },
+        },
         path_display = { truncate = 1 },
         prompt_prefix = '   ',
         selection_caret = '  ',
