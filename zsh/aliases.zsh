@@ -15,7 +15,7 @@ alias tnote="tmux attach -t notes"
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
 alias ...='cd ~'
-alias c='clear'
+alias cl='clear'
 
 alias ls='eza -lh --group-directories-first --icons --hyperlink'
 alias lsa='ls -a'
