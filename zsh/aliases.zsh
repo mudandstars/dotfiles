@@ -7,6 +7,7 @@ alias gst='git status'
 alias gp='git pull'
 alias co='git checkout'
 alias ghd='function _gh_deploy() { current_branch=$(git rev-parse --abbrev-ref HEAD); gh workflow run deploy.yml --ref "$current_branch" -f environment=development-"$1"; }; _gh_deploy'
+alias ghdd='ghd d09'
 
 alias tcode="tmux attach -t coding"
 alias tdot="tmux attach -t dotfiles"
