@@ -25,6 +25,7 @@ alias lta='lt -a'
 
 # php aliases
 alias pest='vendor/bin/pest'
+alias ptest='php artisan test --parallel'
 alias c='composer'
 alias a='php artisan'
 alias mfs='php artisan migrate:fresh --seed'
