@@ -23,14 +23,19 @@ alias lsa='ls -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 
+alias dev='npm run dev'
+
 # php aliases
-alias pest='vendor/bin/pest'
 alias ptest='php artisan test --parallel'
 alias c='composer'
 alias a='php artisan'
 alias mfs='php artisan migrate:fresh --seed'
-alias pint='vendor/bin/pint'
-alias dev='npm run dev'
+
+# clockin
+alias phpcs='./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -v'
+alias duskserve='php artisan serve --env=testing --port 8008'
+alias duskdriver='sudo ./vendor/laravel/dusk/bin/chromedriver-mac-arm --port=9515'
+alias dusktest='php artisan dusk --env=testing'
 
 # IMAGE FUNCTIONS
 heictojpg() {
