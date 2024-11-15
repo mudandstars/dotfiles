@@ -31,3 +31,6 @@ export PATH=/usr/local/bin/:$PATH
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
+
+# brew settings
+export HOMEBREW_NO_AUTO_UPDATE=1
