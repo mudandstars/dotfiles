@@ -12,6 +12,7 @@ alias ghdd='ghd d09'
 alias tcode="tmux attach -t coding"
 alias tdot="tmux attach -t dotfiles"
 alias tnote="tmux attach -t notes"
+alias tetti="ssh -p 62307 paul@dev.tetraeder.solar"
 
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
