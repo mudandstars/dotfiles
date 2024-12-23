@@ -26,6 +26,7 @@ alias lta='lt -a'
 
 alias dev='npm run dev'
 
+alias gpdf='docker run --rm -p 3000:3000 gotenberg/gotenberg:8'
 # php aliases
 alias ptest='php artisan test --parallel'
 alias c='composer'
