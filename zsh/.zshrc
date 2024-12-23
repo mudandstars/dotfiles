@@ -34,3 +34,4 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 # brew settings
 export HOMEBREW_NO_AUTO_UPDATE=1
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
