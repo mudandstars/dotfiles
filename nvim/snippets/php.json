@@ -1,11 +1,28 @@
 {
-    "PHP Unit Test": {
+    "Pest Unit Test": {
         "prefix": "test",
         "body": [
             "/** @test */",
             "public function it_${1:tests}(): void",
             "{",
             "$2",
+            "}"
+        ]
+    },
+    "PHP Unit Test Class": {
+        "prefix": "Test",
+        "body": [
+            "namespace Tests\\Unit;",
+            "",
+            "use Tests\\TestCases\\TestCase;",
+            "",
+            "class $1 extends TestCase",
+            "{",
+            "\t/** @test */",
+            "\tpublic function it_$2(): void",
+            "\t{",
+            "\t\t$3",
+            "\t}",
             "}"
         ]
     }

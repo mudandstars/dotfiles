@@ -11,6 +11,7 @@ return {
   },
   config = function()
     local actions = require("telescope.actions")
+    require('telescope').load_extension('live_grep_args')
     local open_with_trouble = require("trouble.sources.telescope").open
 
     require('telescope').setup({

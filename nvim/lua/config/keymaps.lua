@@ -4,6 +4,9 @@
 
 local keymap = vim.keymap
 
+keymap.set('n', '<leader>r', 'q', { noremap = true })
+keymap.set('n', '@', '@', { noremap = true })
+
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
@@ -24,3 +27,5 @@ keymap.set("n", "<C-y>", 'gg<S-v>G"+y')
 
 -- Reselect pasted text
 keymap.set('n', 'p', 'p`[v`]')
+
+keymap.set('n', '<leader>fp', ':let @+ = @%<CR>', { desc = "Copy current file path to clipboard" })
