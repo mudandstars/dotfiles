@@ -14,7 +14,7 @@ ln -s $DOTFILES/wezterm/.wezterm.lua $HOME/.wezterm.lua
 rm -rf $HOME/.tmux.conf
 ln -s $DOTFILES/tmux/.tmux.conf $HOME/.tmux.conf
 
-CONFIG_DIRS=("nvim" "alacritty")
+CONFIG_DIRS=("nvim" "alacritty" "ghostty")
 for config in "${CONFIG_DIRS[@]}"; do
     rm -rf "$HOME/.config/$config"
     ln -s "$DOTFILES/$config" "$HOME/.config/$config"

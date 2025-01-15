@@ -1,0 +1,51 @@
+# GENERAL
+shell-integration = zsh
+window-save-state = always
+macos-option-as-alt = true
+auto-update = download
+auto-update-channel = stable
+
+# THEME & FONT
+theme = "tokyonight-storm"
+font-family = "FiraCode Nerd Font"
+window-title-font-family = "FiraCode Nerd Font"
+font-size = 18
+adjust-cell-height = 10
+
+# WINDOWS 
+macos-titlebar-style = hidden
+window-padding-x = 8
+window-padding-x = 10
+background-opacity = 0.5
+background-blur-radius = 20
+
+## maximize windows
+window-width = 1000
+window-height = 1000
+
+# CLIPBOARD
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+
+# MISCALLANEOUS
+quit-after-last-window-closed = true
+
+# --------------------
+# --------------------
+
+# KEYBINDINGS
+keybind = ctrl+l=clear_screen
+
+## WINDOWS
+keybind = cmd+w>n=new_window
+keybind = cmd+w>w=close_window
+keybind = cmd+shift+w=close_all_windows
+keybind = cmd+q=quit
+
+## TABS
+keybind = cmd+t>o=toggle_tab_overview
+keybind = cmd+t>n=new_tab
+keybind = cmd+t>w=new_tab
+keybind = cmd+t>p=previous_tab
+keybind = cmd+t>n=next_tab
