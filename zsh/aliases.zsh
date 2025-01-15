@@ -31,7 +31,7 @@ alias gpdf='docker run --rm -p 3000:3000 gotenberg/gotenberg:8'
 alias ptest='php artisan test --parallel'
 alias c='composer'
 alias a='php artisan'
-alias mfs='php artisan migrate:fresh --seed'
+alias mfs='php artisan migrate:fresh --seeder=TestingSeeder'
 
 # clockin
 alias phpcs='./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -v'
