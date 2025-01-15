@@ -16,7 +16,8 @@ adjust-cell-height = 10
 macos-titlebar-style = hidden
 window-padding-x = 8
 window-padding-x = 10
-background-opacity = 0.5
+background-opacity = 0.8
+background = #1c1c1c
 background-blur-radius = 20
 
 ## maximize windows
