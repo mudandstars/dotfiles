@@ -36,16 +36,5 @@ complete -C '/usr/local/bin/aws_completer' aws
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
-FIRST_PROMPT=1
-
-precmd() {
-  # Only insert a blank line after the first command
-  if [ "$FIRST_PROMPT" -eq 0 ]; then
-    echo ""
-  else
-    FIRST_PROMPT=0
-  fi
-}
-
-PROMPT=$'%F{cyan}%B%1~%b%f $(git_prompt_info)\n%F{green}%B->%b%f '
+PROMPT=$'%F{cyan}%B%~%b%f $(git_prompt_info)\n%F{green}%B->%b%f '
 
