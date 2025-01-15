@@ -36,16 +36,6 @@ complete -C '/usr/local/bin/aws_completer' aws
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
-# PROMPT IN NEWLINE
-autoload -Uz vcs_info
-precmd() { vcs_info }  # Dynamically fetch Git branch info
-
-# Define the prompt
-PROMPT=$'%F{blue}%B%~%b%f $(git_prompt_info)\n%F{green}%B$%b%f '
-
-# Git branch info with vcs_info
-zstyle ':vcs_info:git:*' formats ' %F{red}git:(%b)%f %F{yellow}✗%f'
-zstyle ':vcs_info:*' enable git
-#END PROMPT IN NEWLINE
+PROMPT=$'%F{cyan}%B%1~%b%f $(git_prompt_info)\n%F{green}%B$%b%f '
 
 
