@@ -1,6 +1,9 @@
 alias vim='nvim'
 alias n='nvim'
-alias ncfg='nvim $HOME/.dotfiles'
+alias ncfg='cd $HOME/.dotfiles && nvim'
+alias ndot='cd $HOME/.dotfiles && nvim'
+alias nnote='cd $HOME/Documents/notes && nvim'
+alias ncode='cd $HOME/code/clockin && nvim'
 
 alias lg='lazygit'
 alias gst='git status'
