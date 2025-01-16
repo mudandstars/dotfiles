@@ -7,32 +7,32 @@ return {
       theme = {
         normal = {
           a = { fg = '#00ffff', bg = 'NONE', }, -- Cyan bold for the path
-          b = { fg = '#ff0000', bg = 'NONE', }, -- Green bold for the arrow prompt
+          b = { fg = '#cc6666', bg = 'NONE', }, -- Green bold for the arrow prompt
           c = { fg = '#808080', bg = 'NONE' },  -- White for general text
         },
         insert = {
           a = { fg = '#00ffff', bg = 'NONE', },
-          b = { fg = '#ff0000', bg = 'NONE', },
+          b = { fg = '#cc6666', bg = 'NONE', },
           c = { fg = '#808080', bg = 'NONE' },
         },
         visual = {
           a = { fg = '#00ffff', bg = 'NONE', },
-          b = { fg = '#ff0000', bg = 'NONE', },
+          b = { fg = '#cc6666', bg = 'NONE', },
           c = { fg = '#808080', bg = 'NONE' },
         },
         replace = {
           a = { fg = '#00ffff', bg = 'NONE', },
-          b = { fg = '#ff0000', bg = 'NONE', },
+          b = { fg = '#cc6666', bg = 'NONE', },
           c = { fg = '#808080', bg = 'NONE' },
         },
         command = {
           a = { fg = '#00ffff', bg = 'NONE', },
-          b = { fg = '#ff0000', bg = 'NONE', },
+          b = { fg = '#cc6666', bg = 'NONE', },
           c = { fg = '#808080', bg = 'NONE' },
         },
         inactive = {
           a = { fg = '#00ffff', bg = 'NONE' },
-          b = { fg = '#ff0000', bg = 'NONE' },
+          b = { fg = '#cc6666', bg = 'NONE' },
           c = { fg = '#808080', bg = 'NONE' },
         },
       },
