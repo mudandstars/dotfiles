@@ -11,11 +11,14 @@ font-family = "FiraCode Nerd Font"
 window-title-font-family = "FiraCode Nerd Font"
 font-size = 18
 adjust-cell-height = 10
+cursor-opacity = 0.8
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 # WINDOWS 
-macos-titlebar-style = hidden
-window-padding-x = 8
-window-padding-x = 10
+macos-titlebar-style = tabs
+window-padding-y = 10
 background-opacity = 0.80
 background = #1c1c1c
 background-blur-radius = 25
@@ -45,9 +48,9 @@ keybind = cmd+shift+w=close_all_windows
 keybind = cmd+q=quit
 
 ## TABS
-keybind = cmd+t>t=new_tab
-keybind = cmd+t>p=previous_tab
-keybind = cmd+t>n=next_tab
+# keybind = cmd+t>t=new_tab
+# keybind = cmd+t>p=previous_tab
+# keybind = cmd+t>n=next_tab
 
 ## SPLITS
 keybind = cmd+s>l=new_split:right
@@ -61,3 +64,4 @@ keybind = cmd+k=goto_split:top
 keybind = cmd+j=goto_split:bottom
 
 keybind = ctrl+k=close_surface
+

@@ -4,7 +4,38 @@ return {
   opts = {
     options = {
       icons_enabled = true,
-      theme = "ayu",
+      theme = {
+        normal = {
+          a = { fg = '#00ffff', bg = 'NONE', }, -- Cyan bold for the path
+          b = { fg = '#ff0000', bg = 'NONE', }, -- Green bold for the arrow prompt
+          c = { fg = '#ffffff', bg = 'NONE' },  -- White for general text
+        },
+        insert = {
+          a = { fg = '#00ffff', bg = 'NONE', },
+          b = { fg = '#ff0000', bg = 'NONE', },
+          c = { fg = '#ffffff', bg = 'NONE' },
+        },
+        visual = {
+          a = { fg = '#00ffff', bg = 'NONE', },
+          b = { fg = '#ff0000', bg = 'NONE', },
+          c = { fg = '#ffffff', bg = 'NONE' },
+        },
+        replace = {
+          a = { fg = '#00ffff', bg = 'NONE', },
+          b = { fg = '#ff0000', bg = 'NONE', },
+          c = { fg = '#ffffff', bg = 'NONE' },
+        },
+        command = {
+          a = { fg = '#00ffff', bg = 'NONE', },
+          b = { fg = '#ff0000', bg = 'NONE', },
+          c = { fg = '#ffffff', bg = 'NONE' },
+        },
+        inactive = {
+          a = { fg = '#00ffff', bg = 'NONE' },
+          b = { fg = '#ff0000', bg = 'NONE' },
+          c = { fg = '#ffffff', bg = 'NONE' },
+        },
+      },
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {

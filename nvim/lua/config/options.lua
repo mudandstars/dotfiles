@@ -4,7 +4,7 @@
 
 vim.g.lazyvim_php_lsp = "intelephense"
 
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
 vim.opt.cmdheight = 0
 vim.opt.cursorline = false
 vim.opt.shiftwidth = 4
