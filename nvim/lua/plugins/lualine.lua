@@ -8,32 +8,32 @@ return {
         normal = {
           a = { fg = '#00ffff', bg = 'NONE', }, -- Cyan bold for the path
           b = { fg = '#ff0000', bg = 'NONE', }, -- Green bold for the arrow prompt
-          c = { fg = '#ffffff', bg = 'NONE' },  -- White for general text
+          c = { fg = '#808080', bg = 'NONE' },  -- White for general text
         },
         insert = {
           a = { fg = '#00ffff', bg = 'NONE', },
           b = { fg = '#ff0000', bg = 'NONE', },
-          c = { fg = '#ffffff', bg = 'NONE' },
+          c = { fg = '#808080', bg = 'NONE' },
         },
         visual = {
           a = { fg = '#00ffff', bg = 'NONE', },
           b = { fg = '#ff0000', bg = 'NONE', },
-          c = { fg = '#ffffff', bg = 'NONE' },
+          c = { fg = '#808080', bg = 'NONE' },
         },
         replace = {
           a = { fg = '#00ffff', bg = 'NONE', },
           b = { fg = '#ff0000', bg = 'NONE', },
-          c = { fg = '#ffffff', bg = 'NONE' },
+          c = { fg = '#808080', bg = 'NONE' },
         },
         command = {
           a = { fg = '#00ffff', bg = 'NONE', },
           b = { fg = '#ff0000', bg = 'NONE', },
-          c = { fg = '#ffffff', bg = 'NONE' },
+          c = { fg = '#808080', bg = 'NONE' },
         },
         inactive = {
           a = { fg = '#00ffff', bg = 'NONE' },
           b = { fg = '#ff0000', bg = 'NONE' },
-          c = { fg = '#ffffff', bg = 'NONE' },
+          c = { fg = '#808080', bg = 'NONE' },
         },
       },
       component_separators = { left = "", right = "" },
