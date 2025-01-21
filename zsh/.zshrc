@@ -36,5 +36,21 @@ complete -C '/usr/local/bin/aws_completer' aws
 export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
 
-PROMPT=$'%F{cyan}%B%~%b%f $(git_prompt_info)\n%F{green}%B->%b%f '
+# nice prompt
+FIRST_PROMPT=1
+LAST_COMMAND=""
 
+precmd() {
+  # Skip adding a newline for the first prompt or after the clear command
+  if [ "$FIRST_PROMPT" -eq 0 ] && [ "$LAST_COMMAND" != "clear" ]; then
+    echo ""
+  fi
+  FIRST_PROMPT=0
+}
+
+preexec() {
+  # Capture the last executed command
+  LAST_COMMAND=$1
+}
+
+PROMPT=$'%F{cyan}%B%~%b%f $(git_prompt_info)\n%F{green}%B->%b%f ' 
