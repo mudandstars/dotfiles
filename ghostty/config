@@ -19,7 +19,7 @@ shell-integration-features = no-cursor
 # WINDOWS 
 macos-titlebar-style = tabs
 window-padding-y = 10
-background-opacity = 0.80
+background-opacity = 0.85
 background = #1c1c1c
 background-blur-radius = 25
 
@@ -39,13 +39,13 @@ quit-after-last-window-closed = true
 # --------------------
 
 # KEYBINDINGS
-keybind = ctrl+l=clear_screen
+keybind = cmd+q=quit
+# keybind = ctrl+l=clear_screen
 
 ## WINDOWS
 keybind = cmd+w>n=new_window
 keybind = cmd+w>w=close_window
 keybind = cmd+shift+w=close_all_windows
-keybind = cmd+q=quit
 
 ## TABS
 # keybind = cmd+t>t=new_tab
@@ -57,11 +57,11 @@ keybind = cmd+s>l=new_split:right
 keybind = cmd+s>h=new_split:left
 keybind = cmd+s>j=new_split:down
 keybind = cmd+s>k=new_split:up
+keybind = cmd+s>w=close_surface
 
 keybind = cmd+l=goto_split:right
 keybind = cmd+h=goto_split:left
 keybind = cmd+k=goto_split:top
 keybind = cmd+j=goto_split:bottom
 
-keybind = ctrl+k=close_surface
 

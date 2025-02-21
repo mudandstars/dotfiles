@@ -10,6 +10,7 @@ alias gst='git status'
 alias gp='git pull'
 alias co='git checkout'
 alias ghd='function _gh_deploy() { current_branch=$(git rev-parse --abbrev-ref HEAD); gh workflow run deploy.yml --ref "$current_branch" -f environment=development-"$1"; }; _gh_deploy'
+alias ghdt='function _gh_deploy_t() { current_branch=$(git rev-parse --abbrev-ref HEAD); gh workflow run deploy.yml --ref "$current_branch" -f environment=testing; }; _gh_deploy_t'
 alias ghdd='ghd d09'
 
 alias tcode="tmux attach -t coding"
@@ -20,7 +21,7 @@ alias tetti="ssh -p 62307 paul@dev.tetraeder.solar"
 alias reload='source $HOME/.zshrc && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
 alias ...='cd ~'
-alias cl='clear'
+alias al='function _al() { alias | grep "$1"; }; _al'
 
 alias ls='eza -lh --group-directories-first --icons --hyperlink'
 alias lsa='ls -a'
@@ -29,7 +30,7 @@ alias lta='lt -a'
 
 alias dev='npm run dev'
 
-alias gpdf='docker run --rm -p 3000:3000 gotenberg/gotenberg:8'
+alias gpdf='docker run -it --add-host=office.clockin.test:host-gateway --rm -p 3000:3000 gotenberg/gotenberg:8.14.1 /bin/bash'
 # php aliases
 alias ptest='php artisan test --parallel'
 alias c='composer'
@@ -41,6 +42,7 @@ alias phpcs='./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -v'
 alias duskserve='php artisan serve --env=testing --port 8008'
 alias duskdriver='sudo ./vendor/laravel/dusk/bin/chromedriver-mac-arm --port=9515'
 alias dusktest='php artisan dusk --env=testing'
+alias stripe-listen='stripe listen --forward-to https://office.clockin.test/stripe/webhook'
 
 # IMAGE FUNCTIONS
 heictojpg() {
