@@ -23,7 +23,7 @@ keymap.set("i", ";;", "<Esc>A;<Esc>")
 keymap.set("i", ",,", "<Esc>A,<Esc>")
 
 -- Copy entire file into systems clipboard
-keymap.set("n", "<C-y>", 'gg<S-v>G"+y')
+keymap.set("n", "<C-y>", 'gg<S-v>Gy')
 
 -- Reselect pasted text
 keymap.set('n', 'p', 'p`[v`]')
