@@ -30,7 +30,7 @@ alias lta='lt -a'
 
 alias dev='npm run dev'
 
-alias gpdf='docker run -it --add-host=office.clockin.test:host-gateway --rm -p 3000:3000 gotenberg/gotenberg:8.14.1 /bin/bash'
+alias gpdf='docker run -it --add-host=office.clockin.test:host-gateway --rm -p 3000:3000 gotenberg/gotenberg:8.17.1 /bin/bash -c "gotenberg --chromium-ignore-certificate-errors"'
 # php aliases
 alias ptest='php artisan test --parallel'
 alias c='composer'
