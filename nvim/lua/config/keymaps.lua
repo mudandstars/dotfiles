@@ -13,7 +13,7 @@ keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 -- Close all open buffers
-keymap.set("n", "<leader>Q", ":bufdo bdelete<CR>")
+keymap.set("n", "<leader>Q", ":bufdo bdelete<CR><CR>")
 
 -- Paste replace visual selection without copying it.
 keymap.set("v", "p", '"_dP')
@@ -22,10 +22,8 @@ keymap.set("v", "p", '"_dP')
 keymap.set("i", ";;", "<Esc>A;<Esc>")
 keymap.set("i", ",,", "<Esc>A,<Esc>")
 
--- Copy entire file into systems clipboard
-keymap.set("n", "<C-y>", 'gg<S-v>Gy')
-
 -- Reselect pasted text
 keymap.set('n', 'p', 'p`[v`]')
 
+keymap.set("n", "<C-y>", ':%y<CR><CR>')
 keymap.set('n', '<leader>fp', ':let @+ = @%<CR>', { desc = "Copy current file path to clipboard" })
