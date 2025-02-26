@@ -42,7 +42,7 @@ alias phpcs='./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php -v'
 alias duskserve='php artisan serve --env=testing --port 8008'
 alias duskdriver='sudo ./vendor/laravel/dusk/bin/chromedriver-mac-arm --port=9515'
 alias dusktest='php artisan dusk --env=testing'
-alias stripe-listen='stripe listen --forward-to https://office.clockin.test/stripe/webhook'
+alias sl='stripe listen --forward-to https://office.clockin.test/stripe/webhook'
 
 # IMAGE FUNCTIONS
 heictojpg() {
