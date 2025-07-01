@@ -2,28 +2,35 @@
     "Pest Unit Test": {
         "prefix": "test",
         "body": [
-            "/** @test */",
+            "#[Test]",
             "public function it_${1:tests}(): void",
             "{",
             "$2",
             "}"
         ]
     },
-    "PHP Unit Test Class": {
-        "prefix": "Test",
+    "Clockin Testfile": {
+        "prefix": "ctest",
         "body": [
-            "namespace Tests\\Unit;",
+            "namespace Tests\\ $1;",
             "",
+            "use PHPUnit\\Framework\\Attributes\\Test;",
             "use Tests\\TestCases\\TestCase;",
             "",
-            "class $1 extends TestCase",
+            "class $2 extends TestCase",
             "{",
-            "\t/** @test */",
-            "\tpublic function it_$2(): void",
+            "\t#[Test]",
+            "\tpublic function it_$3(): void",
             "\t{",
-            "\t\t$3",
+            "\t\t$4",
             "\t}",
             "}"
+        ]
+    },
+    "@var": {
+        "prefix": "@var",
+        "body": [
+            "/** @var $1 */"
         ]
     }
 }
