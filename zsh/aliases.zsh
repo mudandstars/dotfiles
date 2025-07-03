@@ -1,3 +1,5 @@
+source ~/code/clockin/shared_functions.zsh
+
 alias vim='nvim'
 alias n='nvim'
 alias ncfg='cd $HOME/.dotfiles && nvim'
