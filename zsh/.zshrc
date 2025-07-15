@@ -54,3 +54,11 @@ preexec() {
 }
 
 PROMPT=$'%F{cyan}%B%~%b%f $(git_prompt_info)\n%F{green}%B->%b%f ' 
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/84/"
+
+if command -v ngrok &>/dev/null; then
+    eval "$(ngrok completion)"
+  fi
