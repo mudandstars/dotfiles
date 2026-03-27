@@ -23,7 +23,7 @@ alias tdot="tmux attach -t dotfiles"
 alias tnote="tmux attach -t notes"
 alias tetti="ssh -p 62307 paul@dev.tetraeder.solar"
 
-alias reload='source $HOME/.zshrc && echo "reloaded config"'
+alias reload='exec zsh -l && echo "reloaded config"'
 alias cfgi='bash $HOME/.dotfiles/install.sh && reload'
 alias ...='cd ~'
 alias al='function _al() { alias | grep "$1"; }; _al'
