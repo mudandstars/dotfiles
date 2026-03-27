@@ -23,6 +23,7 @@ symbol = " "
 [git_branch]
 symbol = " "
 style = "bold red"
+format = '[$symbol$branch]($style) '
 
 [git_commit]
 tag_symbol = '  '
