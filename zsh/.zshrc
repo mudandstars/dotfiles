@@ -1,3 +1,4 @@
+# ZSH Configuration
 ZSH_THEME="robbyrussell"
 
 HYPHEN_INSENSITIVE="true"
@@ -13,52 +14,37 @@ export PATH="/Users/paul/Library/Application Support/Herd/bin/":$PATH
 plugins=(
 	git 
 	aws
-	fig
 	copyfile
 	zsh-syntax-highlighting 
 	zsh-autosuggestions 
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# PHP Setup
-export PATH="/opt/homebrew/opt/mariadb@10.11/bin:$PATH"
-export HERD_PHP_83_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/83/"
-export HERD_PHP_82_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/82/"
-export PATH=/usr/local/bin/:$PATH
+eval "$(starship init zsh)"
 
 # aws autocomplete
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
 
-# brew settings
-export HOMEBREW_NO_AUTO_UPDATE=1
-export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
-
-# nice prompt
-FIRST_PROMPT=1
-LAST_COMMAND=""
-
-precmd() {
-  # Skip adding a newline for the first prompt or after the clear command
-  if [ "$FIRST_PROMPT" -eq 0 ] && [ "$LAST_COMMAND" != "clear" ]; then
-    echo ""
-  fi
-  FIRST_PROMPT=0
-}
-
-preexec() {
-  # Capture the last executed command
-  LAST_COMMAND=$1
-}
-
-PROMPT=$'%F{cyan}%B%~%b%f $(git_prompt_info)\n%F{green}%B->%b%f ' 
-
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/84/"
-
+# ngrok
 if command -v ngrok &>/dev/null; then
     eval "$(ngrok completion)"
   fi
+
+# brew
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+export PATH=/usr/local/bin/:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/opt/lua5.1/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/mariadb@10.11/bin:$PATH"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+export PATH="/opt/homebrew/opt/crowdin@4/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+
+export HERD_PHP_85_INI_SCAN_DIR="/Users/paul/Library/Application Support/Herd/config/php/85/"
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml

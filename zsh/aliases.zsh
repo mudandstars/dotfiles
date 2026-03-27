@@ -11,9 +11,12 @@ alias lg='lazygit'
 alias gst='git status'
 alias gp='git pull'
 alias co='git checkout'
+alias mm='git fetch origin && git merge origin/main --no-ff'
 alias ghd='function _gh_deploy() { current_branch=$(git rev-parse --abbrev-ref HEAD); gh workflow run deploy.yml --ref "$current_branch" -f environment=development-"$1"; }; _gh_deploy'
 alias ghdt='function _gh_deploy_t() { current_branch=$(git rev-parse --abbrev-ref HEAD); gh workflow run deploy.yml --ref "$current_branch" -f environment=testing; }; _gh_deploy_t'
 alias ghdd='ghd d09'
+
+alias pest='./vendor/bin/pest'
 
 alias tcode="tmux attach -t coding"
 alias tdot="tmux attach -t dotfiles"
@@ -32,7 +35,7 @@ alias lta='lt -a'
 
 alias dev='npm run dev'
 
-alias gpdf='docker run -it --add-host=office.clockin.test:host-gateway --rm -p 3000:3000 gotenberg/gotenberg:8.17.1 /bin/bash -c "gotenberg --chromium-ignore-certificate-errors"'
+alias gpdf='docker run -it --add-host=office.clockin.test:host-gateway --rm -p 3000:3000 gotenberg/gotenberg:8.26.0 /bin/bash -c "gotenberg --chromium-ignore-certificate-errors"'
 # php aliases
 alias ptest='php artisan test --parallel'
 alias c='composer'
@@ -56,4 +59,45 @@ heicstojpgs() {
         heictojpg $file ${file%.HEIC}.jpg
 	rm $file
     done
+}
+
+# clockin gh merge queue overview
+gh-mq() {
+  local startDate="${1}T00:00:00Z"
+  local endDate="${2}T23:59:59Z"
+
+  gh run list \
+    --repo clockinapp/clockin \
+    --event merge_group \
+    --limit 5000 \
+    --json conclusion,createdAt \
+  | jq -r '
+      map(select(.createdAt >= "'"$startDate"'"
+                 and .createdAt <= "'"$endDate"'")) as $runs
+      | ($runs | length) as $total
+      | ($runs | map(select(.conclusion == "failure")) | length) as $failed
+      | "\($total) \($failed)"
+    '
+}
+
+load-company-dump(){
+    aws sts get-caller-identity &> /dev/null
+    EXIT_CODE="$?"
+    if [ "$EXIT_CODE" != 0 ]; then
+        aws sso login
+    fi
+
+    export AWS_PROFILE=development-poweruser
+    export AWS_ACCESS_KEY_ID=
+    export AWS_SECRET_ACCESS_KEY=
+
+    day_string=$(date +%Y-%m-%d)
+    dump_name="dump_company_$1_$day_string.sql"
+    echo "Loading dump $dump_name"
+
+    if [ "$2" = "--create" ]; then
+        gh workflow run transfer-company-dump.yml --ref main -f environment=development-d12 -f company_id="$1"
+    fi
+
+    php artisan clockin:load-database-dump-from-s3 clockin-development-transfer "$dump_name"
 }
