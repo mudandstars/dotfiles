@@ -1,8 +1,9 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    options = {
+  opts = function(_, opts)
+    opts = opts or {}
+    opts.options = vim.tbl_deep_extend("force", opts.options or {}, {
       icons_enabled = true,
       theme = {
         normal = {
@@ -50,14 +51,23 @@ return {
         tabline = 1000,
         winbar = 1000,
       },
-    },
-    sections = {
-      lualine_a = { "mode" },
-      lualine_b = { "branch", "diff", "diagnostics" },
-      lualine_c = { { "filename", path = 1 } },
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {},
-    },
-  },
+    })
+
+    opts.sections = opts.sections or {}
+    opts.sections.lualine_a = { "mode" }
+    opts.sections.lualine_b = { { "branch", icon = "" }, "diff", "diagnostics" }
+    opts.sections.lualine_c = { { "filename", path = 1 } }
+    opts.sections.lualine_x = {}
+    opts.sections.lualine_y = {}
+    opts.sections.lualine_z = {}
+
+    opts.extensions = opts.extensions or {}
+    for _, ext in ipairs(opts.extensions) do
+      if type(ext) == "table" and ext.sections then
+        ext.sections.lualine_b = { { "branch", icon = "" }, "diff", "diagnostics" }
+      end
+    end
+
+    return opts
+  end,
 }
