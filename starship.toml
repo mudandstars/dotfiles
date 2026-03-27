@@ -22,9 +22,13 @@ symbol = " "
 
 [git_branch]
 symbol = " "
+style = "bold red"
 
 [git_commit]
 tag_symbol = '  '
+
+[git_status]
+disabled = true
 
 [lua]
 symbol = " "
