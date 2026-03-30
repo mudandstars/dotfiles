@@ -5,7 +5,7 @@ return {
     require('nvim-treesitter.install').update({ with_sync = true })
   end,
   dependencies = {
-    { 'nvim-treesitter/playground', cmd = "TSPlaygroundToggle" },
+    { 'nvim-treesitter/playground', enabled = false },
     {
       'JoosepAlviste/nvim-ts-context-commentstring',
       opts = {
@@ -18,7 +18,7 @@ return {
     },
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
-  main = 'nvim-treesitter.configs',
+  main = 'nvim-treesitter',
   opts = {
     ensure_installed = {
       'arduino',
@@ -85,9 +85,9 @@ return {
     },
   },
   config = function(_, opts)
-    require('nvim-treesitter.configs').setup(opts)
+    require('nvim-treesitter').setup(opts)
 
-    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    local parser_config = require("nvim-treesitter.parsers")
     parser_config.blade = {
       install_info = {
         url = "https://github.com/EmranMR/tree-sitter-blade",
