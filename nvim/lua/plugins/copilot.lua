@@ -2,9 +2,27 @@ return {
     -- copilot
     {
         'zbirenbaum/copilot.lua',
+        event = { 'BufReadPre', 'BufNewFile' },
         config = function()
             require('copilot').setup {
-                suggestion = { enabled = false },
+                filetypes = {
+                    ['*'] = true,
+                },
+                should_attach = function(bufnr, _)
+                    return vim.bo[bufnr].buftype == ''
+                end,
+                suggestion = {
+                    enabled = true,
+                    auto_trigger = true,
+                    keymap = {
+                        accept = '<M-l>',
+                        accept_word = '<M-w>',
+                        accept_line = '<M-j>',
+                        next = '<M-]>',
+                        prev = '<M-[>',
+                        dismiss = '<C-]>',
+                    },
+                },
                 panel = { enabled = false },
             }
         end,
@@ -14,7 +32,6 @@ return {
     {
         'CopilotC-Nvim/CopilotChat.nvim',
         dependencies = {
-            { 'github/copilot.vim' },                       -- or zbirenbaum/copilot.lua
             { 'nvim-lua/plenary.nvim', branch = 'master' }, -- for curl, log and async functions
         },
         build = 'make tiktoken',                            -- Only on MacOS or Linux
