@@ -39,9 +39,12 @@ return {
       config.defaults.keymap.builtin['<c-u>'] = 'preview-page-up'
       opts.files = vim.tbl_deep_extend('force', opts.files or {}, {
         hidden = true,
+        no_ignore = true,
+        no_ignore_parent = true,
+        no_ignore_vcs = true,
       })
       opts.grep = vim.tbl_deep_extend('force', opts.grep or {}, {
-        rg_opts = '--column --line-number --no-heading --color=always --smart-case --fixed-strings --max-columns=4096 -e',
+        rg_opts = '--column --line-number --no-heading --color=always --smart-case --fixed-strings --hidden --no-ignore --no-ignore-vcs --max-columns=4096 -e',
       })
       return opts
     end,
