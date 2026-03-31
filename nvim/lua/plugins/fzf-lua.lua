@@ -22,6 +22,7 @@ return {
       opts = opts or {}
       opts.winopts = vim.tbl_deep_extend('force', opts.winopts or {}, {
         fullscreen = true,
+        title_flags = false,
         preview = {
           layout = 'vertical',
           vertical = 'down:50%',
@@ -37,18 +38,31 @@ return {
       config.defaults.keymap.builtin = config.defaults.keymap.builtin or {}
       config.defaults.keymap.builtin['<c-d>'] = 'preview-page-down'
       config.defaults.keymap.builtin['<c-u>'] = 'preview-page-up'
+      config.defaults.actions.files['alt-h'] = false
+      config.defaults.actions.files['alt-i'] = false
+      config.defaults.actions.files['alt-f'] = false
       opts.files = vim.tbl_deep_extend('force', opts.files or {}, {
         hidden = true,
+        fd_opts = '--type f --hidden --follow --exclude .git --exclude node_modules --exclude vendor',
         no_ignore = true,
-        no_ignore_parent = true,
         no_ignore_vcs = true,
+        rg_opts = '--color=never --files --hidden --follow -g "!.git" -g "!**/node_modules/**" -g "!**/vendor/**"',
+        _headers = { 'cwd' },
       })
       opts.grep = vim.tbl_deep_extend('force', opts.grep or {}, {
-        rg_opts = '--column --line-number --no-heading --color=always --smart-case --fixed-strings --hidden --no-ignore --no-ignore-vcs --max-columns=4096 -e',
+        rg_opts = '--column --line-number --no-heading --color=always --smart-case --fixed-strings --hidden --no-ignore --no-ignore-vcs --max-columns=4096 -g "!**/node_modules/**" -g "!**/vendor/**" -e',
+        _headers = { 'cwd' },
       })
       return opts
     end,
     keys = {
+      {
+        '<leader>gd',
+        function()
+          vim.lsp.buf.definition()
+        end,
+        desc = 'Goto Definition',
+      },
       {
         '<leader>a',
         function()
@@ -67,13 +81,13 @@ return {
       {
         '<leader>fr',
         function()
-          require('fzf-lua').oldfiles({
+          require('fzf-lua').history({
             -- Telescope-style "normal mode" is not supported in fzf's UI.
             -- Use j/k for moving in this picker to feel closer to that flow.
             fzf_opts = { ['--bind'] = 'j:down,k:up,ctrl-d:preview-page-down,ctrl-u:preview-page-up' },
           })
         end,
-        desc = 'Recent',
+        desc = 'Recent Buffers',
       },
       {
         '<leader><space>',

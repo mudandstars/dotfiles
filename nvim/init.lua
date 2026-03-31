@@ -12,6 +12,3 @@ if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
     vim.opt.title = true
     vim.opt.titlestring = "nvim:%{fnamemodify(getcwd(), ':t')}"
 end
-
-vim.api.nvim_set_hl(0, 'TreesitterContext', { bg = 'NONE' })
-vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { bg = 'NONE' })
