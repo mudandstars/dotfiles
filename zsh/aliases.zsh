@@ -48,6 +48,8 @@ alias duskserve='php artisan serve --env=testing --port 8008'
 alias duskdriver='sudo ./vendor/laravel/dusk/bin/chromedriver-mac-arm --port=9515'
 alias dusktest='php artisan dusk --env=testing'
 alias sl='stripe listen --forward-to https://office.clockin.test/stripe/webhook'
+alias gh-mq='scripts/github-merge-queue-analysis.sh'
+alias load-company-dump='scripts/load-company-dump.sh'
 
 # IMAGE FUNCTIONS
 heictojpg() {
@@ -61,43 +63,3 @@ heicstojpgs() {
     done
 }
 
-# clockin gh merge queue overview
-gh-mq() {
-  local startDate="${1}T00:00:00Z"
-  local endDate="${2}T23:59:59Z"
-
-  gh run list \
-    --repo clockinapp/clockin \
-    --event merge_group \
-    --limit 5000 \
-    --json conclusion,createdAt \
-  | jq -r '
-      map(select(.createdAt >= "'"$startDate"'"
-                 and .createdAt <= "'"$endDate"'")) as $runs
-      | ($runs | length) as $total
-      | ($runs | map(select(.conclusion == "failure")) | length) as $failed
-      | "\($total) \($failed)"
-    '
-}
-
-load-company-dump(){
-    aws sts get-caller-identity &> /dev/null
-    EXIT_CODE="$?"
-    if [ "$EXIT_CODE" != 0 ]; then
-        aws sso login
-    fi
-
-    export AWS_PROFILE=development-poweruser
-    export AWS_ACCESS_KEY_ID=
-    export AWS_SECRET_ACCESS_KEY=
-
-    day_string=$(date +%Y-%m-%d)
-    dump_name="dump_company_$1_$day_string.sql"
-    echo "Loading dump $dump_name"
-
-    if [ "$2" = "--create" ]; then
-        gh workflow run transfer-company-dump.yml --ref main -f environment=development-d12 -f company_id="$1"
-    fi
-
-    php artisan clockin:load-database-dump-from-s3 clockin-development-transfer "$dump_name"
-}
