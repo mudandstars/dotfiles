@@ -12,7 +12,7 @@ return {
         preset = "none",
         ["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
-        ["<CR>"] = { "fallback" },
+        ["<CR>"] = { "select_and_accept", "fallback" },
         ["<C-j>"] = { "select_next", "fallback" },
         ["<C-k>"] = { "select_prev", "fallback" },
       },
