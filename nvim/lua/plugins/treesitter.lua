@@ -1,105 +1,56 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
-  event = 'VeryLazy',
-  build = function()
-    require('nvim-treesitter.install').update({ with_sync = true })
-  end,
-  dependencies = {
-    { 'nvim-treesitter/playground', enabled = false },
-    {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-      opts = {
-        custom_calculation = function(node, language_tree)
-          if vim.bo.filetype == 'blade' and language_tree._lang ~= 'javascript' then
-            return '{{-- %s --}}'
-          end
-        end,
-      },
-    },
-    'nvim-treesitter/nvim-treesitter-textobjects',
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "blade", "php", "php_only", "phpdoc" })
+      opts.highlight = opts.highlight or {}
+      opts.highlight.enable = true
+      return opts
+    end,
+    config = function(plugin, opts)
+      local parser_config = require("nvim-treesitter.parsers")
+      parser_config.blade = {
+        install_info = {
+          url = "https://github.com/EmranMR/tree-sitter-blade",
+          files = { "src/parser.c" },
+          branch = "main",
+        },
+        filetype = "blade",
+      }
+
+      vim.filetype.add({
+        pattern = {
+          [".*%.blade%.php"] = "blade",
+        },
+      })
+
+      require("lazyvim.plugins.treesitter")[1].config(plugin, opts)
+    end,
   },
-  main = 'nvim-treesitter',
-  opts = {
-    ensure_installed = {
-      'arduino',
-      'bash',
-      'comment',
-      'css',
-      'diff',
-      'dockerfile',
-      'git_config',
-      'git_rebase',
-      'gitattributes',
-      'gitcommit',
-      'gitignore',
-      'go',
-      'html',
-      'http',
-      'ini',
-      'javascript',
-      'json',
-      'jsonc',
-      'lua',
-      'make',
-      'markdown',
-      'passwd',
-      'php',
-      'phpdoc',
-      'python',
-      'regex',
-      'ruby',
-      'rust',
-      'sql',
-      'svelte',
-      'typescript',
-      'vim',
-      'vue',
-      'xml',
-      'yaml',
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    opts = {
+      custom_calculation = function(_, language_tree)
+        if vim.bo.filetype == "blade" and language_tree._lang ~= "javascript" then
+          return "{{-- %s --}}"
+        end
+      end,
     },
-    auto_install = true,
-    highlight = {
-      enable = true,
-    },
-    indent = {
-      enable = true,
-      disable = { "yaml" }
-    },
-    context_commentstring = {
-      enable = true,
-    },
-    rainbow = {
-      enable = true,
-    },
-    textobjects = {
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    opts = {
       select = {
         enable = true,
         lookahead = true,
         keymaps = {
-          ['if'] = '@function.inner',
-          ['af'] = '@function.outer',
-          ['ia'] = '@parameter.inner',
-          ['aa'] = '@parameter.outer',
+          ["if"] = "@function.inner",
+          ["af"] = "@function.outer",
+          ["ia"] = "@parameter.inner",
+          ["aa"] = "@parameter.outer",
         },
       },
     },
   },
-  config = function(_, opts)
-    require('nvim-treesitter').setup(opts)
-
-    local parser_config = require("nvim-treesitter.parsers")
-    parser_config.blade = {
-      install_info = {
-        url = "https://github.com/EmranMR/tree-sitter-blade",
-        files = { "src/parser.c" },
-        branch = "main",
-      },
-      filetype = "blade"
-    }
-    vim.filetype.add({
-      pattern = {
-        ['.*%.blade%.php'] = 'blade',
-      },
-    })
-  end,
 }

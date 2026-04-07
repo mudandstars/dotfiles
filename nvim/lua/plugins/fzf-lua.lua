@@ -44,10 +44,14 @@ return {
       opts.files = vim.tbl_deep_extend('force', opts.files or {}, {
         hidden = true,
         fd_opts = '--type f --hidden --follow --exclude .git --exclude node_modules --exclude vendor',
+        ignore_current_file = true,
         no_ignore = true,
         no_ignore_vcs = true,
         rg_opts = '--color=never --files --hidden --follow -g "!.git" -g "!**/node_modules/**" -g "!**/vendor/**"',
         _headers = { 'cwd' },
+      })
+      opts.history = vim.tbl_deep_extend('force', opts.history or {}, {
+        ignore_current_buffer = true,
       })
       opts.grep = vim.tbl_deep_extend('force', opts.grep or {}, {
         rg_opts = '--column --line-number --no-heading --color=always --smart-case --fixed-strings --hidden --no-ignore --no-ignore-vcs --max-columns=4096 -g "!**/node_modules/**" -g "!**/vendor/**" -e',

@@ -13,26 +13,5 @@ return {
         separator = nil,
         zindex = 20,     -- The Z-index of the context window
         on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-    },
-    config = function(_, opts)
-        require("treesitter-context").setup(opts)
-
-        local function apply_treesitter_context_theme()
-            local normal = vim.api.nvim_get_hl(0, { name = "Normal", link = false })
-            local line_nr = vim.api.nvim_get_hl(0, { name = "LineNr", link = false })
-            local float_border = vim.api.nvim_get_hl(0, { name = "FloatBorder", link = false })
-
-            vim.api.nvim_set_hl(0, "TreesitterContext", { bg = normal.bg })
-            vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { fg = line_nr.fg, bg = normal.bg })
-            vim.api.nvim_set_hl(0, "TreesitterContextSeparator", { fg = float_border.fg, bg = normal.bg })
-        end
-
-        local group = vim.api.nvim_create_augroup("TreesitterContextTheme", { clear = true })
-        vim.api.nvim_create_autocmd("ColorScheme", {
-            group = group,
-            callback = apply_treesitter_context_theme,
-        })
-
-        apply_treesitter_context_theme()
-    end,
+    }
 }
